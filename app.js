@@ -21,7 +21,7 @@ var authRoutes = require("./routes/auth");
 //seedDB();
 
 //mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick");
+mongoose.useMongoClient("mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick");
 
 //connect flash
 app.use(flash());
