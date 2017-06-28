@@ -71,7 +71,7 @@ app.get('/favicon.ico', function(req, res) {
     res.sendStatus(204);
 });
 
-app.listen(process.env.PORT, process.env.IP, ()=>{
+app.listen(process.env.PORT || 3000, process.env.IP, ()=>{
 	console.log("YelpCamp Server is Running");
 });
 
