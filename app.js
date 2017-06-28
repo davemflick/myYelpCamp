@@ -23,7 +23,7 @@ var authRoutes = require("./routes/auth");
 //Create mongodb://localhost/yelp_camp into an environment variable called DATABASEURLLOCAL
 //By typing into the command line 'export DATABASEURLLOCAL=mongodb://localhost/yelp_camp'
 //Now process.env.DATABASEURLLOCAL is mongodb://localhost/yelp_camp
-//INSIDE HEROKU SETTINGS --> GO TO CONFIGURE VARIABLES TO ADD mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick to same variable name
+//INSIDE HEROKU SETTINGS --> GO TO CONFIGURE VARIABLES TO ADD mongodb://<username>:<password>@ds049935.mlab.com:49935/yelpcampflick to same variable name
 var url = process.env.DATABASEURLLOCAL || 'mongodb://localhost/yelp_camp';
 mongoose.connect(url);
 
