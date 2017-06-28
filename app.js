@@ -20,7 +20,8 @@ var authRoutes = require("./routes/auth");
 //Remove all existing campgrounds then add New Campgrounds.
 //seedDB();
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick");
 
 //connect flash
 app.use(flash());
@@ -65,7 +66,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-
 //REMOVE /favicon.ico 404 NOT FOUND error
 app.get('/favicon.ico', function(req, res) {
     res.sendStatus(204);
@@ -74,7 +74,6 @@ app.get('/favicon.ico', function(req, res) {
 app.listen(3000 || process.env.PORT, process.env.IP, ()=>{
 	console.log("YelpCamp Server is Running");
 });
-
 
 
 
