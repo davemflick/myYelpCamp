@@ -20,8 +20,12 @@ var authRoutes = require("./routes/auth");
 //Remove all existing campgrounds then add New Campgrounds.
 //seedDB();
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick");
+//Create mongodb://localhost/yelp_camp into an environment variable called DATABASEURLLOCAL
+//By typing into the command line 'export DATABASEURLLOCAL=mongodb://localhost/yelp_camp'
+//Now process.env.DATABASEURLLOCAL is mongodb://localhost/yelp_camp
+//INSIDE HEROKU SETTINGS --> GO TO CONFIGURE VARIABLES TO ADD mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick to same variable name
+mongoose.connect(process.env.DATABASEURLLOCAL);
+//mongoose.connect("mongodb://dave:finland@ds049935.mlab.com:49935/yelpcampflick");
 
 //connect flash
 app.use(flash());
